@@ -31,6 +31,14 @@ const quizData = [
         d: "none of the above",
         correct: "b",
     },
+    {
+        question: "Which of the following is a disadvantage of using JavaScript?",
+        a: "Client-side JavaScript does not allow the reading or writing of files.",
+        b: "JavaScript can not be used for Networking applications because there is no such support available.",
+        c: "JavaScript doesn't have any multithreading or multiprocess capabilities.",
+        d: "All of the above.",
+        correct: "d",
+    }
 ];
 const quiz = document.getElementById("quiz");
 const answerEls = document.querySelectorAll(".answer");
@@ -91,7 +99,8 @@ submitBtn.addEventListener("click", () => {
                 loadQuiz();
             }
             else{
-                quiz.innerHTML = `<h3>You answered correctly at ${score}/${quizData.length} questions.</h3>`;
+                quiz.innerHTML = `<h3>You answered correctly at ${score}/${quizData.length} questions.</h3>
+                <button onclick="location.reload();">Reload</button>`;
             }
         }
     }
